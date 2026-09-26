@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Call Center Dashboard</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+
+  <body>
+    <div class="dashboard">
+      <header class="header">
+        <div>
+          <h1>Call Center Performance</h1>
+          <p>Operational KPI Dashboard</p>
+        </div>
+
+        <div class="status">
+          <span class="status-dot"></span>
+          API Connected
+        </div>
+      </header>
+
+      <section class="filters">
+        <div class="filter-group">
+          <label for="team">Team</label>
+          <select id="team">
+            <option value="">All Teams</option>
+            <option value="Support">Support</option>
+            <option value="Sales">Sales</option>
+            <option value="Billing">Billing</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="shift">Shift</label>
+          <select id="shift">
+            <option value="">All Shifts</option>
+            <option value="Morning">Morning</option>
+            <option value="Evening">Evening</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="startDate">Start Date</label>
+          <input type="date" id="startDate" />
+        </div>
+
+        <div class="filter-group">
+          <label for="endDate">End Date</label>
+          <input type="date" id="endDate" />
+        </div>
+
+        <button id="applyFilters">Apply Filters</button>
+      </section>
+
+      <section class="kpi-grid">
+        <div class="kpi-card">
+          <span class="kpi-title">Answer Rate</span>
+          <strong id="answerRate">--</strong>
+        </div>
+
+        <div class="kpi-card">
+          <span class="kpi-title">Abandon Rate</span>
+          <strong id="abandonRate">--</strong>
+        </div>
+
+        <div class="kpi-card">
+          <span class="kpi-title">AHT</span>
+          <strong id="aht">--</strong>
+          <small>seconds</small>
+        </div>
+
+        <div class="kpi-card">
+          <span class="kpi-title">AWT</span>
+          <strong id="awt">--</strong>
+          <small>seconds</small>
+        </div>
+
+        <div class="kpi-card">
+          <span class="kpi-title">CSAT</span>
+          <strong id="csat">--</strong>
+        </div>
+
+        <div class="kpi-card">
+          <span class="kpi-title">FCR</span>
+          <strong id="fcr">--</strong>
+        </div>
+
+        <div class="kpi-card">
+          <span class="kpi-title">Transfer Rate</span>
+          <strong id="transferRate">--</strong>
+        </div>
+
+        <div class="kpi-card">
+          <span class="kpi-title">Contact Volume</span>
+          <strong id="contactVolume">--</strong>
+        </div>
+      </section>
+
+      <section class="charts">
+        <div class="chart-card">
+          <div class="chart-header">
+            <h2>Contact Volume by Hour</h2>
+            <span id="peakHour">Peak: --</span>
+          </div>
+
+          <div class="chart-container">
+            <canvas id="hourChart"></canvas>
+          </div>
+        </div>
+
+        <div class="chart-card">
+          <div class="chart-header">
+            <h2>Contact Volume by Day</h2>
+            <span id="peakDay">Peak: --</span>
+          </div>
+
+          <div class="chart-container">
+            <canvas id="dayChart"></canvas>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <p>Call Center Data Analysis • FastAPI + HTML/CSS/JavaScript</p>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

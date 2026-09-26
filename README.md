@@ -1,4 +1,3 @@
-# call-center-analysis
 # Call Center Data Analysis
 
 ## Project Overview
